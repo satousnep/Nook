@@ -88,7 +88,6 @@ NookFrame:SetScript("OnEvent", function(self, event, ...)
         end
     elseif event == "PLAYER_ENTERING_WORLD" then
         self:UnregisterEvent(event);
-        -- addon.ControlCenter:InitializeModules(); TODO: Figure out if i need a control center
         UpdateFOV();
     elseif event == "UI_SCALE_CHANGED" then
         UpdateFOV();
