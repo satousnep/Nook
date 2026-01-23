@@ -67,8 +67,8 @@ local function LoadSettings()
 		end
 	end
 
-    for key, value in pairs(Settings) do
-        CallbackRegistry:TriggerEvent("SettingChanged."..key, value);
+    for key, _ in pairs(DefaultValues) do
+        CallbackRegistry:TriggerEvent("SettingChanged."..key, Settings[key]);
     end
 
 	DefaultValues = nil
