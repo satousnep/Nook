@@ -1,0 +1,12 @@
+## X-Flavor: retail
+## Interface: 120000
+
+## Title: Nook - Custom FOV
+
+## Notes: Provides customization for field of view via black bars on the edge of the game window.|n|nOpen Settings with command:|n/nook
+## Version: 0.1
+## Author: Satou
+## SavedVariables: NookSettings
+
+Core.lua
+Config.lua
