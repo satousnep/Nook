@@ -1,10 +1,10 @@
 ## X-Flavor: retail
-## Interface: 120000
+## Interface: 120100
 
 ## Title: Nook
 
 ## Notes: Provides customization for field of view via black bars on the edge of the game window.|n|nOpen Settings with command:|n/nook
-## Version: 0.1.1
+## Version: 0.1.2
 ## Author: SatouSnep
 ## SavedVariables: NookSettings
 

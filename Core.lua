@@ -52,6 +52,10 @@ function UpdateFOV()
     PixelUtil.SetPoint(WorldFrame, "BOTTOMRIGHT", parent, "BOTTOMRIGHT", -right * s, bottom * s);
 end
 
+local function UpdateFOVAfterCutscene()
+    C_Timer.After(0, UpdateFOV);
+end
+
 for key in pairs(DefaultValues) do
     CallbackRegistry:RegisterCallback("SettingChanged."..key, UpdateFOV);
 end
@@ -78,6 +82,7 @@ local NookFrame = CreateFrame("Frame");
 NookFrame:RegisterEvent("ADDON_LOADED");
 NookFrame:RegisterEvent("PLAYER_ENTERING_WORLD");
 NookFrame:RegisterEvent("UI_SCALE_CHANGED");
+NookFrame:RegisterEvent("CINEMATIC_STOP");
 
 NookFrame:SetScript("OnEvent", function(self, event, ...)
     if event == "ADDON_LOADED" then
@@ -91,5 +96,7 @@ NookFrame:SetScript("OnEvent", function(self, event, ...)
         UpdateFOV();
     elseif event == "UI_SCALE_CHANGED" then
         UpdateFOV();
+    elseif event == "CINEMATIC_STOP" then
+        UpdateFOVAfterCutscene();
     end
 end);
